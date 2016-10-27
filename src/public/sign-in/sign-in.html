@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <h2 id="menu-categories-title" class="text-center">Sign in!</h2>
+  <form name="formname" novalidate>
+  <div class="row">
+  <div class="col-sm-4">First name</div><div class="col-sm-8">
+    <input id="fname" type="text" name="fname" placeholder="Pick a firstname" ng-model="signinCtrl.signin.fname" required minlength="4" ng-maxlength="10" class="formi">
+    <span ng-if="(formname.fname.$error.minlength || formname.fname.$error.required) && formname.fname.$touched"> Username must be at least 4 characters long</span>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4">Last name</div><div class="col-sm-8">
+    <input id="lname" type="text" name="lname" placeholder="Pick a lastname" ng-model="signinCtrl.signin.lname" required minlength="4" ng-maxlength="10" class="formi">
+    <span ng-if="(formname.lname.$error.minlength || formname.lname.$error.required) && formname.lname.$touched"> Lastname must be at least 4 characters long</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">Email address</div><div class="col-sm-8">
+    <input id="email" type="email" name="email" placeholder="Email" ng-model="signinCtrl.signin.email" required class="formi">
+    <span ng-if="formname.email.$invalid && formname.email.$touched"> Must be a valid email address: handle@domain format</span>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-sm-4">Phone number</div>
+    <div class="col-sm-8">
+    <input id="phone" type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="signinCtrl.signin.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})" class="formi">
+          <span ng-if="formname.phone.$invalid && formname.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4">Favorite dish</div><div class="col-sm-8"><input id="VU5" type="text" size="20" maxlength="20" required class="formi" ng-model="signinCtrl.signin.fdish"></input><span ng-if="signinCtrl.data.status">No such menu exists.</span></div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4"></div><div class="col-sm-8"><button  ng-click="signinCtrl.go()" class="formi">Submit</button></div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4"></div><div class="col-sm-8"><span ng-if="signinCtrl.data && !signinCtrl.data.status">Your information has been saved.</span></div>
+  </div>
+</form>
+
+</div>

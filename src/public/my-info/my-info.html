@@ -1,0 +1,22 @@
+<h2 id="menu-categories-title" class="text-center">My Info</h2>
+<div ng-if="!myinfoCtrl.signin.fname"><center><span>Not registered yet! <a href="./index.html#/signin">Sign up now!</a></span></center></div>
+<div class="container-fluid" ng-if="myinfoCtrl.signin.fname">
+  <div class="row">
+  <div class="col-sm-4">First name</div><div class="col-sm-8">{{myinfoCtrl.signin.fname}}</div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4">Last name</div><div class="col-sm-8">{{myinfoCtrl.signin.lname}}</div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4">Email address</div><div class="col-sm-8">{{myinfoCtrl.signin.email}}</div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4">Phone number</div><div class="col-sm-8">{{myinfoCtrl.signin.phone}}</div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4">Favorite dish</div><div class="col-sm-8">{{myinfoCtrl.signin.fdish}}</div>
+  </div>
+  <menu-item  menu-item="myinfoCtrl.menuItem">
+  </menu-item>
+
+</div>
